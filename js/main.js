@@ -125,54 +125,6 @@
     update();
   }
 
-  /* ---------- LIGHTBOX GALERÍA ---------- */
-  function initLightbox() {
-    const lb = $('#lightbox');
-    if (!lb) return;
-    const img = $('#lbImg'), cap = $('#lbCaption');
-    const btnClose = $('#lbClose'), btnPrev = $('#lbPrev'), btnNext = $('#lbNext');
-    const items = $$('.gitem');
-    let idx = 0;
-
-    const show = (i) => {
-      idx = (i + items.length) % items.length;
-      const it = items[idx];
-      img.src = it.dataset.full;
-      img.alt = it.dataset.title || '';
-      cap.textContent = it.dataset.title || '';
-    };
-    const open = (it) => {
-      idx = items.indexOf(it);
-      show(idx);
-      lb.classList.add('is-open');
-      lb.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('no-scroll');
-    };
-    const close = () => {
-      lb.classList.remove('is-open');
-      lb.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('no-scroll');
-    };
-
-    items.forEach(it => it.addEventListener('click', () => open(it)));
-    btnClose.addEventListener('click', close);
-    btnPrev.addEventListener('click', () => show(idx - 1));
-    btnNext.addEventListener('click', () => show(idx + 1));
-    lb.addEventListener('click', e => { if (e.target === lb) close(); });
-    document.addEventListener('keydown', e => {
-      if (!lb.classList.contains('is-open')) return;
-      if (e.key === 'Escape') close();
-      if (e.key === 'ArrowLeft') show(idx - 1);
-      if (e.key === 'ArrowRight') show(idx + 1);
-    });
-    let sx = 0;
-    lb.addEventListener('touchstart', e => sx = e.touches[0].clientX, { passive: true });
-    lb.addEventListener('touchend', e => {
-      const dx = e.changedTouches[0].clientX - sx;
-      if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
-    }, { passive: true });
-  }
-
   /* ---------- VARIOS ---------- */
   function initMisc() {
     const y = $('#year');
@@ -184,7 +136,6 @@
     initLoader();
     initHeader();
     initNav();
-    initLightbox();
     initScrollProgress();
     initMisc();
     window.addEventListener('scroll', startReveals, { once: true });

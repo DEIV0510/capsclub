@@ -29,12 +29,6 @@ const CROPS = {
   'cat-deportivas':   { box: [36, 348, 204, 282],      w: 700,  q: 90, enlarge: true },
   'cat-nuevos':       { box: [458, 348, 204, 282],     w: 700,  q: 90, enlarge: true },
   'cat-negocio':      { box: [0, 268, 692, 500],       w: 1000, q: 90, enlarge: false },
-  'gallery-grupo':    { box: [50, 330, 592, 560],      w: 1000, q: 92, enlarge: false },
-  'gallery-detalle':  { box: [258, 366, 268, 268],     w: 800,  q: 88, enlarge: true },
-  'gallery-verde':    { box: [0, 296, 280, 566],       w: 800,  q: 92, enlarge: false },
-  'gallery-beige':    { box: [408, 296, 284, 566],     w: 800,  q: 92, enlarge: false },
-  'gallery-negra':    { box: [186, 214, 322, 632],     w: 800,  q: 92, enlarge: false },
-  'gallery-reflejo':  { box: [0, 512, 692, 236],       w: 1000, q: 88, enlarge: false },
   'mayorista-bg':     { box: [0, 140, 692, 760],       w: 1000, q: 90, enlarge: false },
   'cta-bg':           { box: [0, 190, 692, 710],       w: 1000, q: 90, enlarge: false },
 };
