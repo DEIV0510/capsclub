@@ -1,0 +1,13 @@
+{
+  "name": "capsclub-axm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page premium para CAPS CLUB AXM - Gorras al detal y por mayor en Armenia, Quindio",
+  "scripts": {
+    "start": "node serve.js",
+    "build:img": "node build-images.js"
+  },
+  "dependencies": {
+    "sharp": "^0.35.2"
+  }
+}

@@ -1,0 +1,14 @@
+# dependencias
+node_modules/
+
+# logs
+npm-debug.log*
+*.log
+
+# sistema
+.DS_Store
+Thumbs.db
+
+# artefactos de prueba
+.playwright-mcp/
+*.local
